@@ -13,12 +13,10 @@ app.controller('NavController', function($scope, $http) {
             contentType: "application/json"
         };
 
-        $scope.products = new Array;
 
         $http(request)
             .success(function (jsonData) {
-                $scope.products = jsonData;
-                $scope.list = $scope.products;
+            	$scope.produtos = jsonData.produtos.produtos;
             })
             .error(function () {
 
@@ -35,15 +33,18 @@ app.controller('Controller', function($scope, $http) {
             contentType: "application/json"
         };
 
-        $scope.profile = new Array;
 
         $http(request)
             .success(function (jsonData) {
-                $scope.profile = jsonData;
-                $scope.list = $scope.profile;
+                $scope.perfil = jsonData.perfil.perfil;
             })
             .error(function () {
 
         });
+	
+});
+
+app.controller('buttonCtrl', function($scope, $http) {
+	
 	
 });

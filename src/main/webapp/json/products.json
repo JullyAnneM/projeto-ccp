@@ -1,4 +1,4 @@
-[
+{"produtos": {"produtos": [
  {
   "nome_produto": "Ansible (Automação)",
   "id_produto": "1"
@@ -95,4 +95,4 @@
   "nome_produto": "Red Hat Business Rules Management Server (BRMS)",
   "id_produto": "9"
  }
-]
+]}}

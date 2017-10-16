@@ -1,4 +1,4 @@
-[
+{"perfil": {"perfil": [
  {
   "nome_perfil": "Venda",
   "id_produto": 1
@@ -11,4 +11,4 @@
   "nome_perfil": "Entrega de Serviço",
   "id_produto": 3
  }
- ]
+ ]}}

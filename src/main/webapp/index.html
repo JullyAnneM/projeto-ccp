@@ -41,8 +41,8 @@
 							    <div class="form-group" ng-controller="Controller">
 							        
 							        <label class="checkbox-inline">
-										<p ng-repeat="perfis in list">
-											<input type="checkbox" ng-model="test" required>{{perfis.nome_perfil}}
+										<p ng-repeat="perfil in perfil">
+											<input type="checkbox" ng-model="test" required>{{perfil.nome_perfil}}
 										</p>
 									</label>
 							    </div>
@@ -56,8 +56,8 @@
 							    <div ng-controller="NavController">
 							        
 							        <label class="checkbox-inline">
-										<p ng-repeat="produtos in list">
-											<input type="checkbox" ng-model="test" required>{{produtos.nome_produto}}
+										<p ng-repeat="produto in produtos">
+											<input type="checkbox" ng-model="test" required>{{produto.nome_produto}}
 										</p>
 									</label>
 							        
@@ -68,13 +68,15 @@
                 <!-- main area-->
                 <div class="col-sm-offset-1 col-xs-12 col-sm-7 well mainarea">
                    
-                    <div id="main" ng-view>
+                    <div id="main">
                     <h2>Esses são os possíveis caminhos a seguir:</h2>
                     </div>
                     
                     <h1></h1>
                     
-                    <button type="button" class="btn btn-danger btn-block">PRÓXIMO</button>
+                    <div ng-Controller="buttonCtrl">                    
+                    	<button type="button" class="btn btn-danger btn-block" ng-click="next()">PRÓXIMO</button>
+                	</div>
                 	
                 </div>
                 
