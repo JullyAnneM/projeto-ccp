@@ -1,12 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="projeto-ccp">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Parceiros Red Hat</title>
+    <link href="styles/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="styles/bootstrap-theme.css" rel="stylesheet" media="screen">
+    <link href="styles/main.css" rel="stylesheet" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="scripts/main.js"></script>
 </head>
-<body>
 
-<h1>Testando Index aqui</h1>
+<body>
+<h1></h1>
+    
+    <div id="wrap">
+    	
+    	<div class="navbar navbar-inverse navbar-fixed-top">
+
+		</div>
+    
+    </div>
+        
+        <div class="container">
+            <div class="row row-offcanvas row-offcanvazs-left">
+            
+            <h1></h1>
+                <!-- sidebar -->
+                <div class="col-xs-6 col-sm-4 well sidebar-offcanvas">
+                    <a href="index.html">
+                        <h1></h1>
+                        <img class="hidden-xs img-responsive" src="img/red.png"></img>
+                        <h1></h1>
+                        <h1></h1>
+                    </a>
+                    <nav class="sidebar-nav" role="navigation">
+                        <div id="sidebar-entries" class="list-group">
+                        	 <label>Escolha seu perfil:</label>
+								<br>
+							    <div class="form-group" ng-controller="Controller">
+							        
+							        <label class="checkbox-inline">
+										<p ng-repeat="perfis in list">
+											<input type="checkbox" ng-model="test" required>{{perfis.nome_perfil}}
+										</p>
+									</label>
+							    </div>
+							    </div>
+                    </nav>
+                    <h1></h1>
+                    <nav class="sidebar-nav" role="navigation">
+                        <div id="sidebar-entries" class="list-group">
+                        	 <label>Escolha o produto desejado:</label>
+                        	 <br>
+							    <div ng-controller="NavController">
+							        
+							        <label class="checkbox-inline">
+										<p ng-repeat="produtos in list">
+											<input type="checkbox" ng-model="test" required>{{produtos.nome_produto}}
+										</p>
+									</label>
+							        
+							    </div>
+                        </div>
+                    </nav>
+                </div>
+                <!-- main area-->
+                <div class="col-sm-offset-1 col-xs-12 col-sm-7 well mainarea">
+                   
+                    <div id="main" ng-view>
+                    <h2>Esses são os possíveis caminhos a seguir:</h2>
+                    </div>
+                    
+                    <h1></h1>
+                    
+                    <button type="button" class="btn btn-danger btn-block">PRÓXIMO</button>
+                	
+                </div>
+                
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

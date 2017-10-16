@@ -1,0 +1,98 @@
+[
+ {
+  "nome_produto": "Ansible (Automação)",
+  "id_produto": "1"
+ },
+ {
+  "nome_produto": "Red Hat Cloudforms (Gerenciamento de Cloud)",
+  "id_produto": "10"
+ },
+ {
+  "nome_produto": "Red Hat Enterprise Linux",
+  "id_produto": "11"
+ },
+ {
+  "nome_produto": "Red Hat JBoss Active - Message Queue (A-MQ)",
+  "id_produto": "12"
+ },
+ {
+  "nome_produto": "Red Hat JBoss Business Process Management Suite (BPMS)",
+  "id_produto": "13"
+ },
+ {
+  "nome_produto": "Red Hat JBoss Business Rules Management Server (BRMS)",
+  "id_produto": "14"
+ },
+ {
+  "nome_produto": "Red Hat JBoss Data Grid (in-memory cache)",
+  "id_produto": "15"
+ },
+ {
+  "nome_produto": "Red Hat JBoss Data Virtualization (virtual database)",
+  "id_produto": "16"
+ },
+ {
+  "nome_produto": "Red Hat JBoss Enterprise Application Platform (EAP)",
+  "id_produto": "17"
+ },
+ {
+  "nome_produto": "Red Hat JBoss Fuse (Enterprise Service Bus)",
+  "id_produto": "18"
+ },
+ {
+  "nome_produto": "Red Hat Mobile Application Platform",
+  "id_produto": "19"
+ },
+ {
+  "nome_produto": "Certified Cloud Solution Provider",
+  "id_produto": "2"
+ },
+ {
+  "nome_produto": "Red Hat Openshift Container Platform",
+  "id_produto": "20"
+ },
+ {
+  "nome_produto": "Red Hat OpenStack Platform",
+  "id_produto": "21"
+ },
+ {
+  "nome_produto": "Red Hat Satellite (Padronização do Ambiente Operacional)",
+  "id_produto": "22"
+ },
+ {
+  "nome_produto": "Red Hat Storage (Software Defined Storage)",
+  "id_produto": "23"
+ },
+ {
+  "nome_produto": "Red Hat Virtualization (Máquinas Virtuais)",
+  "id_produto": "24"
+ },
+ {
+  "nome_produto": "Fundamentos",
+  "id_produto": "3"
+ },
+ {
+  "nome_produto": "Insight (Gerenciamento Proativo de Infra-estrutura)",
+  "id_produto": "4"
+ },
+ {
+  "nome_produto": "Integração de Componentes de Middleware",
+  "id_produto": "5"
+ },
+ {
+  "nome_produto": "Migração de Ambiente Operacional",
+  "id_produto": "6"
+ },
+ {
+  "nome_produto": "Migração de Componentes de Middleware",
+  "id_produto": "7"
+ },
+ {
+  "nome_produto": "Red Hat Business Process Management Suite (BPMS)",
+  "id_produto": "8"
+ },
+ {
+  "nome_produto": "Red Hat Business Rules Management Server (BRMS)",
+  "id_produto": "9"
+ }
+]
