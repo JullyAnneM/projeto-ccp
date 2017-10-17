@@ -42,7 +42,7 @@
 							        
 							        <label class="checkbox-inline">
 										<p ng-repeat="perfil in perfil">
-											<input type="checkbox" ng-model="test" required>{{perfil.nome_perfil}}
+											<input type="checkbox" ng-model="perfil.nome_perfil" required>{{perfil.nome_perfil}}
 										</p>
 									</label>
 							    </div>
@@ -57,7 +57,7 @@
 							        
 							        <label class="checkbox-inline">
 										<p ng-repeat="produto in produtos">
-											<input type="checkbox" ng-model="test" required>{{produto.nome_produto}}
+											<input type="checkbox" ng-model="produto.nome_produto" required>{{produto.nome_produto}}
 										</p>
 									</label>
 							        
