@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="projeto-ccp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Parceiros Red Hat</title>
+	<link href="styles/bootstrap.css" rel="stylesheet" media="screen">
+	<link href="styles/bootstrap-theme.css" rel="stylesheet" media="screen">
+	<link href="styles/main.css" rel="stylesheet" media="screen">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<script src="scripts/main.js"></script>
+	<script src="scripts/confirmaFormularioController.js"></script>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+	<div id="wrap">
+
+		<div class="navbar navbar-inverse navbar-fixed-top"></div>
+
+	</div>
+		<div class="container">
+		<div class="row row-offcanvas row-offcanvazs-left">
+
+			<h1></h1>
+			<!-- sidebar -->
+			<div class="col-xs-6 col-sm-4 well sidebar-offcanvas">
+				<a href="index.html">
+					<h1></h1> <img class="hidden-xs img-responsive" src="img/red.png"></img>
+					<h1></h1>
+					<h1></h1>
+				</a>
+				<nav class="sidebar-nav" role="navigation">
+					<div id="sidebar-entries" class="list-group">
+					
+					<h4><strong>
+    					Plataforma de Capacitação de Parceiros
+					</strong></h4>
+					
+					<blockquote>
+						<p>
+						<label>Como iniciar minha carreira:</label>
+						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/Zzzoag9UwGw" frameborder="0" gesture="media" allowfullscreen></iframe>
+						</p>
+						
+						
+						<p>
+						<label>Acesse o OPEN:</label>
+						</p>
+						<p>
+						<a href="http://partner.redhat.com">Open Partner Enablement Network</a>
+						</p>
+    					
+  					</blockquote>
+
+	
+					</div>
+				</nav>
+			</div>
+
+<div id="form" ng-controller="ConfirmacaoFormularioController">
+<form id="CadastroForm" name="CadastroForm" class="col-sm-offset-1 col-xs-12 col-sm-7 well mainarea" role="form">
+    
+    <span></span>
+    <h2 class="col-sm-offset-1">Confirme seus dados abaixo:</h2><br>
+    
+    <div class="form-group" ng-class="{'has-error': CadastroForm.nome.$invalid}">
+		
+        <h1><label for="nome" class="col-sm-4 small">Nome</label></h1>
+        <div id="nomeControls" class="col-sm-7">
+        	{{parceiro.nome_completo}}
+        </div>
+    </div><br>
+    
+        <div class="form-group" ng-class="{'has-error': CadastroForm.cpf.$invalid}">
+
+        <h1><label for="cpf" class="col-sm-4 small">CPF</label></h1>
+        <div id="cpfControls" class="col-sm-7">
+			{{parceiro.cpf_parceiro}}
+        </div>
+    </div><br>
+    
+    <div class="form-group" ng-class="{'has-error': CadastroForm.email.$invalid}">
+        <h1><label for="email" class="col-sm-4 small">E-mail</label></h1>
+        <div id="emailControls" class="col-sm-7">
+			{{parceiro.email}}
+       </div>
+    </div><br>
+    
+    <div class="form-group" ng-class="{'has-error': CadastroForm.empresa.$invalid}">
+        <h1><label for="empresa" class="col-sm-4 small control-label">Empresa</label></h1>
+        <div id="empresaControls" class="col-sm-7">
+			{{parceiro.nome_empresa}}
+    </div><br>
+
+    <div class="form-group" ng-class="{'has-error': CadastroForm.cargo.$invalid}">
+        <h1><label for="cargo" class="col-sm-4 small">Cargo</label></h1>
+        <div id="cargoControls" class="col-sm-7">
+		    {{parceiro.cargo}}     
+        </div>
+    </div><br>
+
+    <div class="form-group" ng-class="{'has-error': CadastroForm.telefone.$invalid}">
+        <h1><label for="telefone" class="col-sm-4 small">Telefone</label></h1>
+        <div id="telefoneControls" class="col-sm-7">
+			{{parceiro.telefone}}            
+        </div>
+    </div><br><br>
+    
+     	<li ng-repeat="vendas in filtroVendas = (acreditacoes | filter:'P1')" hidden></li>
+		<h3 ng-show="filtroVendas.length"><strong>Vendas</strong></h3>
+		 <label id="acreditacoesControl" ng-repeat="acreditacao in acreditacoes | filter:'P1' | orderBy: 'acreditacao.nome_acreditacao'">
+			<div>
+				<span class="glyphicon glyphicon-ok small"></span> 
+				{{acreditacao.nome_acreditacao}}
+			</div>
+		</label>
+		
+		<li ng-repeat="pre_vendas in filtroVendas = (acreditacoes | filter:'P2')" hidden></li>
+		<h3 ng-show="filtroVendas.length"><strong>Pré-Vendas</strong></h3>
+		 <label id="acreditacoesControl" ng-repeat="acreditacao in acreditacoes | filter:'P2' | orderBy: 'acreditacao.nome_acreditacao'">
+			<div>
+				<span class="glyphicon glyphicon-ok small"></span> 
+				{{acreditacao.nome_acreditacao}}
+			</div>
+		</label>
+		
+		<li ng-repeat="delivery in filtroVendas = (acreditacoes | filter:'P3')" hidden></li>
+		<h3 ng-show="filtroVendas.length"><strong>Entrega de Serviços</strong></h3>
+		 <label id="acreditacoesControl" ng-repeat="acreditacao in acreditacoes | filter:'P3' | orderBy: 'acreditacao.nome_acreditacao'">
+			<div>
+				<span class="glyphicon glyphicon-ok small"></span> 
+				{{acreditacao.nome_acreditacao}}
+			</div>
+		</label>					
+						
+    <div class="form-group">
+        <div class="col-sm-offset-0 col-sm-12">
+            <button ng-click="print('form')" class="btn btn-danger" ng-disabled="!podeImprimir">IMPRIMIR</button>
+        	<button type="button" class="btn btn-danger btn-primary" ng-click="cancelAction()" >CANCELAR</button>
+            <button id="saveCadastro" ng-disabled="!estaAtivo" name="saveCadastro" class="btn btn-danger btn-default" ng-click="salvarDados(parceiro)">Confirmação</button>
+        </div>
+    </div>
+    </div>
+    </div>
+    
+</form>
+</div>
+</body>
+</html>

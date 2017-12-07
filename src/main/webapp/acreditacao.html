@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="projeto-ccp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Parceiros Red Hat</title>
+	<link href="styles/bootstrap.css" rel="stylesheet" media="screen">
+	<link href="styles/bootstrap-theme.css" rel="stylesheet" media="screen">
+	<link href="styles/main.css" rel="stylesheet" media="screen">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<script src="scripts/main.js"></script>
+	<script src="scripts/produtosController.js"></script>
+	<script src="scripts/perfilController.js"></script>
+	<script src="scripts/acreditacoesController.js"></script>
+	<script src="scripts/botaoController.js"></script>  	
+	<script src="angular-input-masks-standalone.min.js"></script>
+	
+	
+	
+	
+</head>
+
+<body>
+	<h1></h1>
+	<div id="wrap">
+		<div class="navbar navbar-inverse navbar-fixed-top"></div>
+	</div>
+	<div class="container">
+		<div class="row row-offcanvas row-offcanvazs-left">
+			<h1></h1>
+			<div class="col-xs-6 col-sm-4 well sidebar-offcanvas">
+				<a href="index.html">
+					<h1></h1> <img class="hidden-xs img-responsive" src="img/red.png"></img>
+					<h1></h1>
+					<h1></h1>
+				</a>
+				<nav class="sidebar-nav" role="navigation">
+					<div id="sidebar-entries" class="list-group">
+						<label>Escolha seu perfil:</label> <br>
+						<div class="form-group" ng-controller="PerfilController">
+							<p ng-repeat="perfil in perfis">
+								<label class="checkbox-inline"> 
+									<input class="chbx" type="checkbox" ng-model="perfil.id_perfil" ng-change='stateChangedPerfil(perfil)' required> {{perfil.nome_perfil}} 
+								</label>
+							</p>
+						</div>
+					</div>
+				</nav>
+				<h1></h1>
+				<nav class="sidebar-nav" role="navigation">
+					<div id="sidebar-entries" class="list-group">
+						<label>Escolha o produto desejado:</label> <br>
+						<div ng-controller="ProdutosController">							
+								<p ng-repeat="produto in produtos">
+									<label class="checkbox-inline">
+										<input type="checkbox" ng-model="produto.id_produto" ng-change='stateChangedProduto(produto)' required>{{produto.nome_produto}}
+									</label>
+								</p>
+							
+
+						</div>
+					</div>
+				</nav>
+			</div>
+			<!-- main area-->
+			<div class="col-sm-offset-1 col-xs-12 col-sm-7 well mainarea">
+
+				<div id="main" ng-controller="AcreditacoesController">
+					<h2>Esses são os possíveis caminhos a seguir:</h2>
+					
+						<li ng-repeat="vendas in filtroVendas = (ac | filter:'P1')" hidden></li>
+						<h3 ng-show="filtroVendas.length"><strong>Vendas</strong></h3>
+					<div ng-repeat="acreditacao in ac | filter:'P1' | orderBy: 'acreditacao.nome_acreditacao'">
+						
+						<label class="checkbox-inline">
+						<h4><input class="chbx" type="checkbox" ng-model="teste" ng-click='adicionaAcreditacao($event,acreditacao)'  required> {{acreditacao.nome_acreditacao}}</h4>
+						<div id="main" ng-view>
+						</div>
+						</label>
+					</div> 
+					
+					<li ng-repeat="pre_vendas in filtroPreVendas = (ac | filter:'P2')" hidden></li>
+						<h3 ng-show="filtroPreVendas.length"><strong>Pré-vendas</strong></h3>
+						
+					<div ng-repeat="acreditacao in ac | filter:'P2' | orderBy: 'acreditacao.nome_acreditacao'">
+						<label class="checkbox-inline">
+						<h4><input class="chbx" type="checkbox" ng-model="teste"  ng-click='adicionaAcreditacao($event,acreditacao)'   required> {{acreditacao.nome_acreditacao}}</h4>
+						<div id="main" ng-view>
+						</div>
+						</label>
+					</div> 
+					<li ng-repeat="delivery in filtroDelivery = (ac | filter:'P3')" hidden></li>
+						<h3 ng-show="filtroDelivery.length"><strong>Entrega de Serviços</strong></h3>
+					<div ng-repeat="acreditacao in ac | filter:'P3' | orderBy: 'acreditacao.nome_acreditacao'">
+						<label class="checkbox-inline">
+						<h4><input class="chbx" type="checkbox" ng-model="teste" ng-click='adicionaAcreditacao($event,acreditacao)'  required> {{acreditacao.nome_acreditacao}}</h4>
+						<div id="main" ng-view>
+						</div>
+						</label>
+					</div> 
+				</div>
+
+				<h1></h1>
+
+				<div ng-Controller="botaoController">
+					<button type="button" class="btn btn-danger btn-primary" ng-click="cancelAction()">CANCELAR</button>
+					<button type="button" class="btn btn-danger btn-default" ng-class="{active: matchesRoute('Cadastros')}" ng-click="saveSession(acreditacoesSelecionadas)" ng-disabled="acreditacoesSelecionadas.length == 0" data-toggle="offcanvas">PRÓXIMO</button>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	</div>
+	
+</body>
+</html>
