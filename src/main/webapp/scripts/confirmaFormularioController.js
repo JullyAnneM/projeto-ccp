@@ -32,12 +32,12 @@ app.controller('ConfirmacaoFormularioController',['$rootScope','$http','$q','$ti
 						document.body.style.cursor='default';
 						console.log(response);
 							if(response.status == 201){
-								
+								$scope.podeImprimir = true;
 								if(confirm("Gostaria de imprimir o relatório?")){
 									$scope.print();
 								}
 								$scope.emiteAlerta();
-								$scope.podeImprimir = true;
+							
 							} else {
 								alert("Houve um erro, tente enviar novamente a solicitação.");
 							}
@@ -112,7 +112,7 @@ app.controller('ConfirmacaoFormularioController',['$rootScope','$http','$q','$ti
 						"<h2>Confira os dados que registrou no sistema de capacitação de parceiros: </h2>"+ 
 						"<h3>CPF: " + $scope.parceiro.cpf_parceiro + "</h3>" +  
 						"<h3>E-mail: " + $scope.parceiro.email +  "</h3>" + 
-						"<h3>Empresa: "+ $scope.empresa +  "</h3>" + 
+						"<h3>Empresa: "+ $scope.parceiro.nome_empresa +  "</h3>" + 
 						"<h3>Cargo: "+ $scope.parceiro.cargo+  "</h3>" + 
 						"<h3>Telefone: " + $scope.parceiro.telefone +  "</h3>" + 
 						"<br><br> Abaixo encontra-se a lista de acreditações que selecionou: " + 

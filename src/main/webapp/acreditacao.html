@@ -39,8 +39,8 @@
 						<label>Escolha seu perfil:</label> <br>
 						<div class="form-group" ng-controller="PerfilController">
 							<p ng-repeat="perfil in perfis">
-								<label class="checkbox-inline"> 
-									<input class="chbx" type="checkbox" ng-model="perfil.id_perfil" ng-change='stateChangedPerfil(perfil)' required> {{perfil.nome_perfil}} 
+								<label class="checkbox-inline" > 
+									<input class="perfil" type="checkbox" ng-model="perfil.id_perfil"  ng-change='stateChangedPerfil(perfil)' required> {{perfil.nome_perfil}} 
 								</label>
 							</p>
 						</div>
@@ -103,7 +103,7 @@
 				<h1></h1>
 
 				<div ng-Controller="botaoController">
-					<button type="button" class="btn btn-danger btn-primary" ng-click="cancelAction()">CANCELAR</button>
+					<button type="button" id="proximo" class="btn btn-danger btn-primary" ng-click="cancelAction()">CANCELAR</button>
 					<button type="button" class="btn btn-danger btn-default" ng-class="{active: matchesRoute('Cadastros')}" ng-click="saveSession(acreditacoesSelecionadas)" ng-disabled="acreditacoesSelecionadas.length == 0" data-toggle="offcanvas">PRÓXIMO</button>
 				</div>
 

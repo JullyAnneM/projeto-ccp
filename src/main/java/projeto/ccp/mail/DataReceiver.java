@@ -90,7 +90,7 @@ public class DataReceiver extends HttpServlet {
 		return dadosSeparados;
 	}
 
-	private Parceiro criaParceiro(JSONObject obj) {
+	public Parceiro criaParceiro(JSONObject obj) {
 		Parceiro parceiro = new Parceiro();
 		parceiro.setCpf_parceiro(obj.getString("cpf_parceiro"));
 		parceiro.setNome_completo(obj.getString("nome_completo"));
@@ -173,6 +173,7 @@ public class DataReceiver extends HttpServlet {
 		if (status == 201) {
 			try {
 				for (int i = 0; i < acreditacoes.length(); i++) {
+					
 					JSONArray cursos = rc.getCursosFromAPI(acreditacoes.getJSONObject(i).getString("id_acreditacao"));
 					if (cursos.length() > 0) {
 						for (int j = 0; j < cursos.length(); j++) {

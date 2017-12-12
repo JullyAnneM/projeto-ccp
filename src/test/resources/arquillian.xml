@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<arquillian xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://jboss.org/schema/arquillian"
+	xsi:schemaLocation="http://jboss.org/schema/arquillian http://www.jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+
+	<container qualifier="jboss" default="true">
+		<configuration>
+			<property name="jbossHome">/home/pdelbell/Programas/Red-Hat/EAP-7.1-new</property>
+			<property name="serverConfig">/home/pdelbell/Programas/Red-Hat/EAP-7.1-new/standalone/configuration/standalone.xml</property>
+			<property name="managementPort">9999</property>
+			<property name="username">admin</property>
+			<property name="managementAddress">example.redhat.com</property>
+			<property name="password">RedHat123!</property>
+		</configuration>
+	</container>
+</arquillian>
